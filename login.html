@@ -71,6 +71,7 @@
         <button id="login-button">Login</button>
         <script>
           document.getElementById("login-button").addEventListener("click", function() {
+            event.preventDefault();
             window.location.href = "index.html";
           });
         </script>
