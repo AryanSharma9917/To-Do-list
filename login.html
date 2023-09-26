@@ -1,53 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-  <!-- Add your CSS stylesheets and JavaScript imports here -->
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../src/style.css" />
+  <script defer src="../src/global.js"></script>
+  <title>Login Page</title>
 </head>
 <body>
-  <!-- Add your login form here -->
-  <form id="login-form">
-    <h1>Login</h1>
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required>
-    <button type="submit">Login</button>
-  </form>
-  <!-- Add any additional elements or styling as needed -->
-  <!-- Include any JavaScript specific to the login page -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const loginForm = document.getElementById('login-form');
+  <div id="top">
+    <div class="social">
+      <a href="https://github.com/Aryansharma9917" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+      <a
+        href="https://www.linkedin.com/in/Aryansharma9917"
+        target="_blank"
+      >
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </div>
+    <button id="dark-mode-button" title="Change Theme">
+      <i class="far fa-sun"></i>
+    </button>
+  </div>
+  <div class="container">
+    <div class="wrapper">
+      <h1>Login</h1>
+      <form action="#" method="GET" class="inputs">
+        <div class="error">Fields must be filled</div>
+        <label class="sr-only" for="email">Email</label>
+        <input
+          type="email"
+          required
+          placeholder="Email"
+          id="email"
+          autocomplete="none"
+        />
+        <label class="sr-only" for="password">Password</label>
+        <input
+          type="password"
+          required
+          placeholder="Password"
+          id="password"
+          minlength="6"
+        />
+        <div class="show-password-area">
+          <input type="checkbox" id="show-password" />
+          <label for="show-password">Show Password</label>
+        </div>
 
-      loginForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-        
-        // Get user input (email and password)
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
-
-        // Check authentication (you may need to implement this logic)
-        if (authenticateUser(email, password)) {
-          // Authentication successful
-          localStorage.setItem('isLoggedIn', 'true');
-          window.location.href = 'index.html'; // Redirect to the todo page
-        } else {
-          // Authentication failed (display an error message or handle as needed)
-          alert('Login failed. Please check your credentials.');
-        }
-      });
-    });
-
-    // This is a sample authentication function; replace it with your actual logic
-    function authenticateUser(email, password) {
-      // Replace this with your authentication logic
-      // For demonstration purposes, let's assume authentication always succeeds
-      return true;
-    }
-  </script>
+        <button>Login</button>
+      </form>
+      <div class="register">
+        <p>Don't have an account yet?</p>
+        <a href="register.html">Register</a>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
