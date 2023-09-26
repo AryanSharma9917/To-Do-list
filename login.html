@@ -64,11 +64,19 @@
           <label for="show-password">Show Password</label>
         </div>
 
-        <button>Login</button>
+        <!-- <ubtton>Login</button>
+        <script>
+          window.location.href = "index.html";
+        </script> -->
+        <button id="login-button">Login</button>
+        <script>
+          document.getElementById("login-button").addEventListener("click", function() {
+            window.location.href = "index.html";
+          });
+        </script>
       </form>
       <div class="register">
-        <p>Don't have an account yet?</p>
-        <a href="register.html">Register</a>
+        <p>Don't have an account yet? <a href="register.html">Register</a></p>
       </div>
     </div>
   </div>

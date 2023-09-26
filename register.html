@@ -74,11 +74,16 @@
           <label for="show-password">Show Password</label>
         </div>
 
-        <button>Register</button>
+        <!-- <button>Register</button> -->
+        <button id="register-button">Register</button>
+        <script>
+          document.getElementById("register-button").addEventListener("click", function() {
+            window.location.href = "login.html";
+          });
+        </script>
       </form>
       <div class="register">
-        <p>Already have an account?</p>
-        <a href="login.html">Login</a>
+        <p>Already have an account? <a href="login.html">Login</a></p>
       </div>
     </div>
   </div>
