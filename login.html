@@ -64,14 +64,11 @@
           <label for="show-password">Show Password</label>
         </div>
         <button id="login-button">Login</button>
+
         <script>
           document.getElementById("login-button").addEventListener("click", function() {
             // event.preventDefault();
-            event.preventDefault();
-
-            const email = document.getElementById("email").value;
-            const password = document.getElementById("password").value;
-            
+            localStorage.setItem('isLoggedIn', true);
             window.location.href = "index.html";
           });
         </script>
