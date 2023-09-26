@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <!-- Add your CSS stylesheets and JavaScript imports here -->
+</head>
+<body>
+  <!-- Add your registration form here -->
+  <form id="register-form">
+    <h1>Register</h1>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <button type="submit">Register</button>
+  </form>
+  <!-- Add any additional elements or styling as needed -->
+  <!-- Include any JavaScript specific to the registration page -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const registerForm = document.getElementById('register-form');
+
+      registerForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        
+        // Get user input (name, email, and password)
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        // Check registration (you may need to implement this logic)
+        if (registerUser(name, email, password)) {
+          // Registration successful
+          localStorage.setItem('isLoggedIn', 'true');
+          window.location.href = 'index.html'; // Redirect to the todo page
+        } else {
+          // Registration failed (display an error message or handle as needed)
+          alert('Registration failed. Please try again.');
+        }
+      });
+    });
+
+    // This is a sample registration function; replace it with your actual logic
+    function registerUser(name, email, password) {
+      // Replace this with your registration logic
+      // For demonstration purposes, let's assume registration always succeeds
+      return true;
+    }
+  </script>
+</body>
+</html>

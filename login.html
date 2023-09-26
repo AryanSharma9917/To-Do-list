@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <!-- Add your CSS stylesheets and JavaScript imports here -->
+</head>
+<body>
+  <!-- Add your login form here -->
+  <form id="login-form">
+    <h1>Login</h1>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <button type="submit">Login</button>
+  </form>
+  <!-- Add any additional elements or styling as needed -->
+  <!-- Include any JavaScript specific to the login page -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const loginForm = document.getElementById('login-form');
+
+      loginForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        
+        // Get user input (email and password)
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        // Check authentication (you may need to implement this logic)
+        if (authenticateUser(email, password)) {
+          // Authentication successful
+          localStorage.setItem('isLoggedIn', 'true');
+          window.location.href = 'index.html'; // Redirect to the todo page
+        } else {
+          // Authentication failed (display an error message or handle as needed)
+          alert('Login failed. Please check your credentials.');
+        }
+      });
+    });
+
+    // This is a sample authentication function; replace it with your actual logic
+    function authenticateUser(email, password) {
+      // Replace this with your authentication logic
+      // For demonstration purposes, let's assume authentication always succeeds
+      return true;
+    }
+  </script>
+</body>
+</html>
